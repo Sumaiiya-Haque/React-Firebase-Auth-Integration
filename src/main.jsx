@@ -8,6 +8,7 @@ import Root from "./Layout/Root";
 import Login from "./components/Login/Login";
 import Register from "./components/Register/Register";
 import AuthProvider from "./context/AuthContext/AuthProvider";
+import Orders from "./components/Orders/Orders";
 
 // export const AuthContext = createContext(null);
 // const userInfo = {
@@ -31,6 +32,10 @@ const router = createBrowserRouter([
         path: "/register",
         Component: Register,
       },
+      {
+        path:'orders',
+        Component:Orders
+      }
     ],
   },
 ]);

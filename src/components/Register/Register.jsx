@@ -5,11 +5,18 @@ import { AuthContext } from "../../context/AuthContext/AuthContext";
 // import { auth } from "../../firebase/firebase.init";
 
 const Register = () => {
-  const authInfo = use(AuthContext);
+  const { createUser } = use(AuthContext);
+
   const handleRegister = (event) => {
     event.preventDefault();
     const email = event.target.email.value;
     const password = event.target.password.value;
+
+    createUser(email, password).then(result=>{
+      console.log(result.user)
+    }).catch(error=>{
+      console.log(error)
+    })
   };
 
   // const handleRegister = (e) => {
